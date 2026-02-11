@@ -1,0 +1,103 @@
+body {
+    margin-top: 0;
+    margin-left: 0;
+    background-color: lightblue;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1, h2{
+    text-align: center;
+    font-size: 80px;
+    line-height: 120px;
+    color:  rgb(0, 103, 172);
+}
+
+
+/*BANNER*/
+header {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 560px;
+}
+
+header img {
+    width: 100%;
+    height: 560px;
+}
+
+#texto-banner h1 {
+    position: absolute;
+    top: 30%;
+    right: 1%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    color: rgb(204, 236, 247);
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: rgb(0, 103, 172);
+}
+
+#texto-banner p {
+    position: absolute;
+    top: 50%;
+    right: 0.2%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    color: rgb(0, 0, 0);
+    font-size: 40px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgb(255, 255, 255);
+}
+
+
+
+.opcoes-caixa {
+    width: 280px;
+    height: 420px;
+    background-color: #54a9ee;
+    border-radius: 30px;
+    border-color: rgb(0, 103, 172);
+    border-style: groove;
+}
+
+.opcoes {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 180px;
+    top: 70px;
+    left: 70px;
+    width: 100%;
+}
+
+.opcoes img {
+    width: 230px;
+    height: 230px;
+    border-radius: 30px;
+    margin-top: 10px;
+    margin-left: 25px;
+}
+
+.opcoes p {
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+#preco {
+    font-weight: bold;
+}
+
+footer{
+    height: 100px;
+    background-color: rgb(0, 103, 172);
+    display: flex;
+    justify-content: space-around;
+    font-size: 25px;
+    margin-top: 200px;
+}
+
+footer img{
+    height: 20px;
+    width: 20px;
+    gap: 40px;
+}
