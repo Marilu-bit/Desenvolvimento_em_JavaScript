@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calculadora</h1>
+    <h3>Valor 1</h3>
+    <input id="v1" type="number">
+
+    <h3>Valor 2</h3>
+    <input id="v2" type="number">
+
+    <button id="somar">Somar</button>
+    <button id="subtrair">Subtrair</button>
+    <button id="multiplicar">Multiplicar</button>
+    <button id="dividir">Dividir</button>
+
+    <h2 id="resultado">Resultado:</h2>
+
+    <script>
+        document.getElementById('somar').addEventListener('click', function(){
+            document.getElementById('resultado').innerHTML = 'Resultado: ' + Math.trunc(parseFloat(document.getElementById('v1').value) + parseFloat(document.getElementById('v2').value));
+        });
+
+        document.getElementById('subtrair').addEventListener('click', function(){
+            document.getElementById('resultado').innerHTML = 'Resultado: ' + Math.trunc(parseFloat(document.getElementById('v1').value) - parseFloat(document.getElementById('v2').value));
+        });
+
+        document.getElementById('multiplicar').addEventListener('click', function(){
+            document.getElementById('resultado').innerHTML = 'Resultado: ' + Math.trunc(parseFloat(document.getElementById('v1').value) * parseFloat(document.getElementById('v2').value));
+        });
+
+        document.getElementById('dividir').addEventListener('click', function(){
+            document.getElementById('resultado').innerHTML = 'Resultado: ' + Math.trunc(parseFloat(document.getElementById('v1').value) / parseFloat(document.getElementById('v2').value));
+        });
+
+    </script>
+</body>
+</html>
