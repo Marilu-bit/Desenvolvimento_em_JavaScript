@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: #f8c0f4;
+        margin-top: 50px;
+    }
+
+    .botoes {
+        display: flex;
+        justify-content: center;
+        gap: 100px;
+    }
+
+    button {
+        height: 40px;
+        width: 150px;
+        border-radius: 1000px;
+        border-color: #d603c1;
+        color: #fab4f3;
+        background-color: #ca01bd;
+    }
+
+    .h{
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+    }
+    ul {
+        list-style: none;
+        margin-top: 20px;
+        width: 300px;
+        padding: 0;
+    }
+
+    li {
+        background-color: white;
+        padding: 10px;
+        margin-bottom: 8px;
+        border-radius: 5px;
+        text-transform: capitalize;
+        border-color: #d603c1;
+    }
+</style>
+
+<body>
+    <div class="botoes">
+        <button id="adicionar">Adicionar</button>
+        <button id="remover">Remover</button>
+        <button id="listar">Listar</button>
+    </div>
+
+    <div class="h"><ul id="lista"></ul></div>
+
+    <script>
+        let compras = [];
+        let ul = document.getElementById('lista')
+        ul.innerHTML = "";
+
+        let x = prompt('Bem-Vindo(a) ao Rose. O que gostaria de comprar hoje? Se já tiver acabado a lista, digite s.');
+
+        while (x !== 's' && x !== 'S') {
+            compras.push(x.toLowerCase());
+            x = prompt('Qual item você gostaria? Se já tiver acabado a lista, digite s.'.toLowerCase());
+        }
+
+        for (let item = 0; item < compras.length; item++) {
+            let li = document.createElement('li');
+            li.textContent = compras[item];
+            ul.appendChild(li);
+        }
+
+
+        document.getElementById('remover').addEventListener('click', function () {
+            let remover = prompt('Remover qual item? (Digite o nome do produto)').toLowerCase();
+            let itemEscolhido = compras.indexOf(remover);
+            if (itemEscolhido !== -1) {
+                compras.splice(itemEscolhido, 1);
+            } else {
+                alert("Item não encontrado.");
+            }
+            ul.innerHTML = "";
+            for (let item = 0; item < compras.length; item++) {
+                let li = document.createElement('li');
+                li.textContent = compras[item];
+                ul.appendChild(li);
+            }
+        })
+
+        document.getElementById('adicionar').addEventListener('click', function () {
+            let adicionar = prompt('Adicionar qual?').toLowerCase();
+            compras.push(adicionar);
+            ul.innerHTML = "";
+            for (let item = 0; item < compras.length; item++) {
+                let li = document.createElement('li');
+                li.textContent = compras[item];
+                ul.appendChild(li);
+            }
+        })
+
+        document.getElementById('listar').addEventListener('click', function () {
+            ul.innerHTML = "";
+            for (let item = 0; item < compras.length; item++) {
+                let li = document.createElement('li');
+                li.textContent = compras[item];
+                ul.appendChild(li);
+            }
+        }
+        )
+    </script>
+</body>
+
+</html>
